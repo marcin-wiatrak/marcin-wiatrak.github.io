@@ -102,6 +102,8 @@ const goToSlideNav = (slideNumberClick) => {
     const containerWidth = getActualContainerWidth();
     const containerLeftNew = (containerWidth / 4) * slideNumberClick - (containerWidth / 4)
     container.style.left = - containerLeftNew + "px";
+
+    slideNumber = slideNumberClick
     changeNavigationArrowText(slideNumberClick);
     navigationItemChange(slideNumberClick)
 }
