@@ -94,12 +94,17 @@ const getActualContainerLeft = () => {
 
 const setLeftOnResize = () => {
     const containerWidth = getActualContainerWidth();
-    const containerLeft = getActualContainerLeft();
     const containerLeftNew = (containerWidth / 4) * slideNumber - (containerWidth / 4)
     container.style.left = - containerLeftNew + "px";
     console.log("Szerokość kontenera: " + containerWidth + "\nLEFT kontenera: " + containerLeft + "\nNumer slajdu: " + slideNumber + "\nLeft new :" + containerLeftNew);
 }
-
+const goToSlideNav = (slideNumberClick) => {
+    const containerWidth = getActualContainerWidth();
+    const containerLeftNew = (containerWidth / 4) * slideNumberClick - (containerWidth / 4)
+    container.style.left = - containerLeftNew + "px";
+    changeNavigationArrowText(slideNumberClick);
+    navigationItemChange(slideNumberClick)
+}
 
 leftArrow.addEventListener('click', function() {
     container.style.left = getActualContainerLeft() + (getActualContainerWidth() / 4) + "px";
@@ -107,13 +112,21 @@ leftArrow.addEventListener('click', function() {
     changeNavigationArrowText(slideNumber);
     navigationItemChange(slideNumber)
 });
-
 rightArrow.addEventListener('click', function() {
     container.style.left = getActualContainerLeft() - (getActualContainerWidth() / 4) + "px";
     slideNumber++;
     changeNavigationArrowText(slideNumber);
     navigationItemChange(slideNumber)
 });
+
+navLiItems.forEach(liItem => {
+    liItem.addEventListener("click", function () {
+        const slideNumberClick = this.dataset.slideId;
+
+        goToSlideNav(slideNumberClick);
+    })
+
+})
 
 changeNavigationArrowText(slideNumber);
 navigationItemChange(slideNumber)

@@ -21,6 +21,7 @@ body {
     width: 400%;
     height: 100vh;
     display: flex;
+    transition: left ease .5s;
 }
 
 .container section {
@@ -176,6 +177,7 @@ nav ul {
 }
 nav ul li {
     margin: 0 10px;
+    cursor: pointer;
 }
 
 nav ul li svg {
@@ -184,9 +186,11 @@ nav ul li svg {
 }
 nav ul li.active svg {
     fill: #ffffff;
+    transition: fill ease 0.5s;
 }
 nav ul li.active-negative svg {
     fill: #000000;
+    transition: fill ease 0.5s;
 }
 
 footer {
