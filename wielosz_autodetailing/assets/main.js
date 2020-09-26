@@ -96,7 +96,6 @@ const setLeftOnResize = () => {
     const containerWidth = getActualContainerWidth();
     const containerLeftNew = (containerWidth / 4) * slideNumber - (containerWidth / 4)
     container.style.left = - containerLeftNew + "px";
-    console.log("Szerokość kontenera: " + containerWidth + "\nLEFT kontenera: " + containerLeft + "\nNumer slajdu: " + slideNumber + "\nLeft new :" + containerLeftNew);
 }
 const goToSlideNav = (slideNumberClick) => {
     const containerWidth = getActualContainerWidth();
