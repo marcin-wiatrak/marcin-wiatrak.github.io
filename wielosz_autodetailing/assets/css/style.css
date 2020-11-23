@@ -3,60 +3,54 @@
     src: url('../fonts/CenturyGothic_regular.ttf');
 }
 
+@keyframes slideLeft {
+    0% {left: 100vw;}
+    100% {left: 0;}
+}
+@keyframes slideRight {
+    0% {left: -100vw;}
+    100% {left: 0px;}
+}
 
+::-webkit-scrollbar {
+    width: 6px;;
+}
+::-webkit-scrollbar-track {
+    background-color: #707070;
+    border-radius: 5px;
+    margin: 20px 0;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #c3c3c3;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: #ffffff;
+}
 
 body {
     font-family: "Century Gothic";
     scrollbar-width: none;
+    overflow: hidden;
 }
 
-section {
+.section {
     display: none;
     position: absolute;
     height: 100vh;
     width: 100vw;
+    overflow: auto;
+    z-index: 0;
 }
 
-.homepage,
-.gallery {
+.section__homepage,
+.section__gallery {
     background: rgb(57,57,57);
     background: linear-gradient(45deg, rgba(57,57,57,1) 0%, rgba(0,0,0,1) 50%, rgba(57,57,57,1) 100%);
     color: #ffffff;
 }
 
-section h2 {
-    font-size: 60px;
-}
-
-.active-slide {
-    display: block;
-    top: 0 !important;
-    left: 0 !important;
-}
-
-
-.homepage {
-    top: 0;
-    left: 0;
-    z-index: 1;
-}
-.services {
-    top: 0;
-    left: 100vw;
-    z-index: 2;
-}
-.gallery {
-    top: 0;
-    left: 100vw;
-    z-index: 3;
-}
-.contact {
-    top: 0;
-    left: 100vw;
-    z-index: 4;
-}
-
-.homepage .content {
+.section__homepage .content {
     width: 100%;
     height: 100%;
     display: flex;
@@ -65,44 +59,25 @@ section h2 {
     align-items: center;
 }
 
-.homepage .content .section--mainlogo {
+.section__homepage .content .section__mainlogo {
     height: 450px;
     margin-bottom: 25px;
 }
 
-.homepage .content .section--topheader {
+.section__homepage .content .section__topheader {
     text-align: left;
     width: 500px;
     font-size: 65px;
     margin-bottom: 10px;
 }
-.homepage .content .section--bottomheader {
+.section__homepage .content .section__bottomheader {
     text-align: right;
     font-size: 35px;
     width: 500px;
 }
 
-
-/* 
-####################
-##### SERVICES #####
-####################
-*/
-
-/* 
-###################
-##### GALLERY #####
-###################
-*/
-
-/* 
-###################
-##### CONTACT #####
-###################
-*/
-
-.arrow-left,
-.arrow-right {
+.navigation__arrow--left,
+.navigation__arrow--right {
     color: #c3c3c3;
     font-size: 20px;
     position: fixed;
@@ -113,12 +88,12 @@ section h2 {
     user-select: none;
 }
 
-.arrow-left {
-    left: 10px;
+.navigation__arrow--left {
+    left: 15px;
     margin-left: 30px;
     text-align: left;
 }
-.arrow-left::before {
+.navigation__arrow--left::before {
     position: absolute;
     font-family: 'Material Icons';
     content: 'keyboard_arrow_left';
@@ -129,12 +104,12 @@ section h2 {
     transform: translateY(-50%);
     left: -50px;;
 }
-.arrow-right {
-    right: 10px;
+.navigation__arrow--right {
+    right: 15px;
     margin-right: 30px;
     text-align: right;
 }
-.arrow-right::after {
+.navigation__arrow--right::after {
     position: absolute;
     font-family: 'Material Icons';
     content: 'keyboard_arrow_right';
@@ -146,23 +121,7 @@ section h2 {
     right: -50px;
 }
 
-.color-negative {
-    color: #333333;
-}
-
-.navigation--bigger {
-    font-size: 1.5rem;
-}
-.navigation--smaller {
-    font-size: 0.9rem;
-}
-.navigation--bigger,
-.navigation--smaller {
-    margin: 2px 0;
-}
-
-
-nav {
+.navigation {
     position: fixed;
     width: 100vw;
     display: flex;
@@ -171,28 +130,22 @@ nav {
     bottom: 15px;
     z-index: 1000;
 }
-nav ul {
+
+.navigation__list  {
     display: flex;
 }
-nav ul li {
+
+.navigation .navigation__list .navigation__listelement {
     margin: 0 10px;
     cursor: pointer;
 }
 
-nav ul li svg {
+.navigation .navigation__list .navigation__listelement svg {
     fill: #707070;
     height: 100%;
 }
-nav ul li.active svg {
-    fill: #ffffff;
-    transition: fill ease 0.5s;
-}
-nav ul li.active-negative svg {
-    fill: #000000;
-    transition: fill ease 0.5s;
-}
 
-footer {
+.footer {
     position: fixed;
     display: flex;
     justify-content: flex-end;
@@ -202,7 +155,14 @@ footer {
     width: 100vw;
     box-sizing: border-box;
 }
-footer .footer--paragraph {
+.footer .footer__text {
     font-size: 15px;
     color: #707070
+}
+
+/* ################################################## */
+
+.active-slide {
+    display: block;
+    z-index: 1;
 }
