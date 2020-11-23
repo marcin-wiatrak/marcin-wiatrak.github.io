@@ -50,32 +50,6 @@ body {
     color: #ffffff;
 }
 
-.section__homepage .content {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.section__homepage .content .section__mainlogo {
-    height: 450px;
-    margin-bottom: 25px;
-}
-
-.section__homepage .content .section__topheader {
-    text-align: left;
-    width: 500px;
-    font-size: 65px;
-    margin-bottom: 10px;
-}
-.section__homepage .content .section__bottomheader {
-    text-align: right;
-    font-size: 35px;
-    width: 500px;
-}
-
 .navigation__arrow--left,
 .navigation__arrow--right {
     color: #c3c3c3;
@@ -159,6 +133,85 @@ body {
     font-size: 15px;
     color: #707070
 }
+
+.section .section__header {
+    font-size: 3rem;
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section__homepage .content {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section__homepage .content .section__mainlogo {
+    height: 450px;
+    margin-bottom: 25px;
+}
+
+.section__homepage .content .section__topheader {
+    text-align: left;
+    width: 500px;
+    font-size: 65px;
+    margin-bottom: 10px;
+}
+.section__homepage .content .section__bottomheader {
+    text-align: right;
+    font-size: 35px;
+    width: 500px;
+}
+
+.section__services {
+    padding: 20px;
+}
+
+.section__services .services__table {
+    display: flex;
+    justify-content: center;
+    /* align-self: center; */
+}
+
+.section__services .services__column {
+    width: 50%;
+    padding: 10px 30px
+}
+
+.section__services .services__column--left {
+    /* margin-left: 10px; */
+    text-align: right;
+    border-right: #c3c3c3 1px solid;
+}
+
+.section__services .services__column--left ul li,
+.section__services .services__column--right ul li {
+    padding: 10px;
+    position: relative;
+    margin: 20px;
+}
+
+.section__services .services__column--left ul li::after {
+    content: url(../img/list-point.png);
+    position: absolute;
+    right: -30px
+}
+
+.section__services .services__column--right ul li::before {
+    content: url(../img/list-point.png);
+    position: absolute;
+    left: -30px
+}
+
+.section__services .services__table .services__column .services__column-header {
+    font-size: 2rem;
+    margin-bottom: 30px;
+}
+
 
 /* ################################################## */
 

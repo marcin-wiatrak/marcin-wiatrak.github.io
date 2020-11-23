@@ -2,7 +2,7 @@ const leftArrow = document.getElementsByClassName("navigation__arrow--left")[0];
 const rightArrow = document.getElementsByClassName("navigation__arrow--right")[0];
 const sectionsList = document.querySelector("[data-slide-id='2']");
 
-const firstSlide = document.getElementsByClassName("section__homepage")[0];
+const firstSlide = document.getElementsByClassName("section")[1];
 firstSlide.classList.add("active-slide");
 
 
